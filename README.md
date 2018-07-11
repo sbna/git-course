@@ -116,7 +116,7 @@ EX1.2 : REMOTE COMMAND
 
 In this exercise we continue to work with the previous local repository.
 
- - 1.2.1 Create a remote empty repository
+ - 1.2.1 Create a remote empty repository on Github ( read the user-guide web page [Create a Repo](https://help.github.com/articles/create-a-repo/) )
  - 1.2.2 Check if your local repo has remote repos linked
 
          git remote -v
@@ -238,7 +238,7 @@ EX.2.2 : MULTIPLE BRANCH
  - 2.2.3 --**CHECK**-- if all repos have the DEV brach
  - 2.2.4 ODs create a new branch on their local repos, the branch name has to be unique and has to contain the feature implemented in this branch.
  - 2.2.5 ODs code the feature in the new branch, ODs commit the changes and push on their remote repos.
- - 2.2.6 TL pulls the new branches from ODs remote repos, TL **rebases** the two branches on DEV, TL pushes the changes on his remote repo
- - 2.2.7 ODs pull the rebased DEV branch on their local repo and sync with their remote repos
- - 2.2.8 --**CHECK**-- if all repos have the branch DEV rebased with the OD changes
+ - 2.2.6 TL pulls the new branches from ODs remote repos, TL **merges** the two branches on DEV, TL pushes the changes on his remote repo
+ - 2.2.7 ODs pull the merged DEV branch on their local repo and sync with their remote repos
+ - 2.2.8 --**CHECK**-- if all repos have the branch DEV merged with the OD changes
 
