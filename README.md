@@ -208,7 +208,7 @@ EX.1.3 : BRANCH COMMAND
 This exercise will be done in groups. Create a group of 3 persons (max 4) and define who is the **Team Leader (TL)**. The other members are simply **other developer (OD)**. 
 In the first part of the exercise we work with only a single branch (master branch); in the second part we introduce the dev branch to simulate a real developer's workflow.
 
-![](https://gitlab.hpc.cineca.it/training/git_course/blob/master/fig/workflow.png)
+![](fig/workflow.png?raw=true)
 
 EX.2.1 : SINGLE BRANCH
 -----------------------
