@@ -1,7 +1,7 @@
 ***GIT*** 
 =============
 
-Author : 
+Authors : 
    - Simone Bna    (s.bn@cineca.it)
    - Eric Pascolo  (eric.pascolo@cineca.it)
 
@@ -12,7 +12,7 @@ Version :  Cineca Parallel Summer School 2018
 
 Follow the steps below to configure git on your machine.
 
- - 0.0.1 Is git installed in your machine?
+ - 0.0.1 Is git installed on your machine?
 
          git 
          apt install git (Deb example)
@@ -22,11 +22,11 @@ Follow the steps below to configure git on your machine.
          git config --global user.name "Name Surname"
          git config --global user.email "name@example.com”
 
- - 0.0.3 Congfigure your favorite editor
+ - 0.0.3 Configure your favorite editor
          
          git config --global core.editor vim
 
- - 0.0.4 Show all git setting
+ - 0.0.4 Show all git settings
 
          git config --list 
 
@@ -34,7 +34,8 @@ Follow the steps below to configure git on your machine.
 **EX.1: Single Dev**
 ====================
 
-In this exercise you try the basic git command, how to set multiple remote repos and how manage branches workflow.
+In this exercise we learn the basic git commands, how to set-up multiple remote repos 
+and how to manage branches workflow.
 
 EX.1.1 : BASIC COMMAND
 -----------------------
@@ -45,28 +46,28 @@ EX.1.1 : BASIC COMMAND
          cd ex1_1
          git init 
 
- - 1.1.2 Create a README file in repo
+ - 1.1.2 Create a README file in the repo
 
          touch README.md
   
- - 1.1.3 Add a new file to staging area
+ - 1.1.3 Add a new file to the staging area
       
-         git add  README.md
+         git add README.md
 
  - 1.1.4 Commit your changes
       
          git commit -m "commit description"
 
- - 1.1.5 Create a directory into repo
+ - 1.1.5 Create a directory into the repo
 
          mkdir my_software
 
- - 1.1.6 Try to commit "my_software" to repository, is it allowed?
+ - 1.1.6 Try to commit "my_software", is it allowed?
 
          git add my_software
-         git commit -m"commit directoy" 
+         git commit -m "commit directoy" 
 
- - 1.1.7 --**CHECK**-- Use git status to see the repo status
+ - 1.1.7 --**CHECK**-- Use git status to check the repo status
 
          git status
 
@@ -75,7 +76,7 @@ EX.1.1 : BASIC COMMAND
          cd my_software
          touch local_configuration.cfg
 
- - 1.1.9 Use gitignore file to avoid wrong commit of local_configuration.cfg
+ - 1.1.9 Add a .gitignore file to avoid to commit the "local_configuration.cfg" file
        
          touch .gitignore
          echo "local_configuration.cfg" >> .gitignore
@@ -87,23 +88,23 @@ EX.1.1 : BASIC COMMAND
 
          git ls-tree --full-tree -r master
 
- - 1.1.11 Use git log to see the history of repo, how commit do you do?
+ - 1.1.11 Use git log to view the history of the repo, how many commits are there?
 
          git log
 
- - 1.1.12 Use git ls-files to add multiple files to repository
+ - 1.1.12 Use git ls-files to add multiple files to the repository
       
          cd my_software
          touch main.py io.py log.py
-         git ls-files -o             #show list of untrucked files
-         git add $(git ls-files -o)  # don't worry ignored file will be not processed
-         git commit -m"create message"
+         git ls-files -o             # show list of untrucked files
+         git add $(git ls-files -o)  # don't worry, ignored files will be not processed
+         git commit -m "create message"
 
- - 1.1.13 Use git tag to identify first code version
+ - 1.1.13 Use git tag to identify the first code version
       
          git tag v0.1 -m "code version 0.1"
 
- - 1.1.14 Change main.py and commit, check with *git diff* the difference between HEAD and previous commit (HEAD^)
+ - 1.1.14 Change main.py and commit, check with *git diff* the difference between HEAD and the previous commit (HEAD^)
        
          echo "print(\"Hello World\")" >> main.py
          git add main.py
@@ -113,12 +114,14 @@ EX.1.1 : BASIC COMMAND
 EX1.2 : REMOTE COMMAND
 -----------------------
 
- - 1.2.1 Create a remote empty repository
- - 1.2.2 Show if your local repo has remote repo linked
+In this exercise we continue to work with the previous local repository.
+
+ - 1.2.1 Create a remote empty repository on Github ( read the user-guide web page [Create a Repo](https://help.github.com/articles/create-a-repo/) )
+ - 1.2.2 Check if your local repo has remote repos linked
 
          git remote -v
 
- - 1.2.3 Copy remote repo URL and link with local repo, call it ORIGIN
+ - 1.2.3 Copy the remote repo URL and link it with the local repo, call it ORIGIN
 
          git remote add origin your_url 
 
@@ -126,7 +129,7 @@ EX1.2 : REMOTE COMMAND
 
          git push origin master
 
- - 1.2.5 --**CHECK**-- if syncronization is completed,  can you see tag in ORIGIN?
+ - 1.2.5 --**CHECK**-- if syncronization is completed, can you see tag in ORIGIN?
 
  - 1.2.6 Push the tag to ORIGIN
 
@@ -134,15 +137,15 @@ EX1.2 : REMOTE COMMAND
 
  - 1.2.7 --**CHECK**-- if syncronization is really completed
 
- - 1.2.8 Create a remote repo for BACKUP and add it to local repo
+ - 1.2.8 Create a  **new** remote repo for BACKUP and add it to the local repo
 
          git remote add backup url_backup_repo 
 
- - 1.2.9 --**CHECK**-- if local repo is linked with ORIGIN and BACKUP
+ - 1.2.9 --**CHECK**-- if the local repo is linked with ORIGIN and BACKUP
 
          git remote -v
 
- - 1.2.10 Push local repo on BACKUP
+ - 1.2.10 Push the local repo to BACKUP
 
          git push --tags backup master
 
@@ -165,14 +168,14 @@ EX.1.3 : BRANCH COMMAND
 
  - 1.3.4 Return to Master branch, modify main.py  and commit it
       
-         git checout master
+         git checkout master
          echo "print(\" I'm main \")" >> main.py
          git add main.py
          git commit -m "change main.py"
 
  - 1.3.5 Return to dev branch, change log.py  and commit it
 
-         git checout master
+         git checkout dev
          echo "print(\" I'm LOG \")" >> log.py
          git add log.py
          git commit -m "change log.py"
@@ -203,7 +206,9 @@ EX.1.3 : BRANCH COMMAND
 =========
 
 This exercise will be done in groups. Create a group of 3 persons (max 4) and define who is the **Team Leader (TL)**. The other members are simply **other developer (OD)**. 
-In the first part of the exercise we work with only a single branch (master branch); in the second part we introduce the dev branch to simulate a real developer's workflow. 
+In the first part of the exercise we work with only a single branch (master branch); in the second part we introduce the dev branch to simulate a real developer's workflow.
+
+![](fig/workflow.png?raw=true)
 
 EX.2.1 : SINGLE BRANCH
 -----------------------
@@ -235,7 +240,7 @@ EX.2.2 : MULTIPLE BRANCH
  - 2.2.3 --**CHECK**-- if all repos have the DEV brach
  - 2.2.4 ODs create a new branch on their local repos, the branch name has to be unique and has to contain the feature implemented in this branch.
  - 2.2.5 ODs code the feature in the new branch, ODs commit the changes and push on their remote repos.
- - 2.2.6 TL pulls the new branches from ODs remote repos, TL **rebases** the two branches on DEV, TL pushes the changes on his remote repo
- - 2.2.7 ODs pull the rebased DEV branch on their local repo and sync with their remote repos
- - 2.2.8 --**CHECK**-- if all repos have the branch DEV rebased with the OD changes
+ - 2.2.6 TL pulls the new branches from ODs remote repos, TL **merges** the two branches on DEV, TL pushes the changes on his remote repo
+ - 2.2.7 ODs pull the merged DEV branch on their local repo and sync with their remote repos
+ - 2.2.8 --**CHECK**-- if all repos have the branch DEV merged with the OD changes
 
